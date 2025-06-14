@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dobre Alexandru Studio - Rezervări sesiuni</title>
+<style>
+  /* Reset simplu */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #6a0dad, #a64ca6);
+    color: #fff;
+    margin: 0; padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background-color: rgba(58, 0, 92, 0.9);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  main {
+    flex: 1;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  section {
+    margin-bottom: 30px;
+  }
+  h2 {
+    border-bottom: 2px solid #d8a9e3;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+  }
+  p {
+    line-height: 1.6;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  ul li {
+    margin-bottom: 8px;
+  }
+  form {
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  input[type="submit"] {
+    background-color: #9b4dca;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+  }
+  input[type="submit"]:hover {
+    background-color: #6a0dad;
+  }
+  footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(58, 0, 92, 0.9);
+    color: #eee;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.8rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Dobre Alexandru Studio</h1>
+</header>
+<main>
+  <section id="despre-mine">
+    <h2>Despre mine</h2>
+    <p>
+      Salutare! Cauți un studio profesionist de ceva timp, dar nu ai reușit să găsești unul pe placul tău până acum? Eu vin cu soluția pentru tine!
+    </p>
+    <p>
+      Îți pun la dispoziție tot ce am acumulat din cursurile de pregătire în domeniu, cât și din experiența mea practică de peste 3 ani. Ce face studioul meu diferit față de altele? Aici legăm prietenii, ne susținem unii pe ceilalți și, mai ales, <strong>nu suntem doar după bani</strong> – aici vrem ca <strong>TU</strong> să progresezi, iar muzica ta să sune exact așa cum ți-ai propus.
+    </p>
+    <p>
+      Vei primi indicații și păreri pe tot parcursul sesiunii, iar eu voi interveni de fiecare dată când ceva nu sună bine. Nu stăm cu ochii pe ceas – <strong>stăm cât ai tu nevoie</strong>.
+    </p>
+    <p>
+      Dacă ești începător și nu ai mai avut contact cu un studio, <strong>nu-ți face griji</strong> – o vom lua de la capăt, pas cu pas!
+    </p>
+    <p>
+      🎁 Pentru că acest site este la început, <strong>primele 10 sesiuni beneficiază de până la 70% reducere</strong>, așa că <strong>sună-mă cât de repede poți</strong> și hai să facem muzică împreună!
+    </p>
+    <p><strong>Telefon:</strong> 0760 938 373</p>
+  </section>
+
+  <section id="servicii">
+    <h2>Servicii oferite</h2>
+    <ul>
+      <li>🎙️ Înregistrări vocale</li>
+      <li>🎧 Producție muzicală</li>
+      <li>🎚️ Mix & Mastering</li>
+    </ul>
+  </section>
+
+  <section id="program">
+    <h2>Program de lucru</h2>
+    <ul>
+      <li>Miercuri – Vineri: de la ora 19:00</li>
+      <li>Sâmbătă & Duminică: de la ora 12:00</li>
+    </ul>
+    <p><strong>Durata sesiuni:</strong> 2 sau 3 ore</p>
+    <p><strong>Pauză între sesiuni:</strong> 30 minute</p>
+    <p><strong>Plată:</strong> Cash la studio sau transfer bancar (IBAN la cerere)</p>
+    <p><strong>Confirmare rezervări:</strong> Manuală (vei primi email la fiecare rezervare)</p>
+  </section>
+
+  <section id="rezervare">
+    <h2>Rezervă o sesiune</h2>
+    <form id="bookingForm" action="mailto:dobre4406@gmail.com" method="POST" enctype="text/plain" onsubmit="return validateForm()">
+      <label for="nume">Nume complet:</label>
+      <input type="text" id="nume" name="Nume" required />
+
+      <label for="telefon">Telefon:</label>
+      <input type="tel" id="telefon" name="Telefon" required pattern="[0-9\s\+\-]{7,15}" placeholder="ex: 0760 938 373" />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="Email" required />
+
+      <label for="data">Data rezervării:</label>
+      <input type="date" id="data" name="Data" required min="" />
+
+      <label for="durata">Durata sesiuni:</label>
+      <select id="durata" name="Durata" required>
+        <option value="">--Alege durata--</option>
+        <option value="2 ore">2 ore</option>
+        <option value="3 ore">3 ore</option>
+      </select>
+
+      <label for="mesaj">Mesaj / detalii suplimentare:</label>
+      <textarea id="mesaj" name="Mesaj" rows="4" placeholder="Dacă ai cerințe speciale..."></textarea>
+
+      <input type="submit" value="Trimite rezervarea" />
+    </form>
+  </section>
+</main>
+<footer>
+  &copy; 2025 Dobre Alexandru Studio. Toate drepturile rezervate.
+</footer>
+
+<script>
+  // Setăm minim data pentru inputul datei la azi
+  const dataInput = document.getElementById('data');
+  const azi = new Date().toISOString().split('T')[0];
+  dataInput.setAttribute('min', azi);
+
+  // Validare formular
+  function validateForm() {
+    const dataRezervare = new Date(dataInput.value);
+    const aziDate = new Date();
+    aziDate.setHours(0,0,0,0);
+    if (dataRezervare < aziDate) {
+      alert('Te rog să alegi o dată validă în viitor.');
+      return false;
+    }
+    return true;
+  }
+</script>
+</body>
+</html>
